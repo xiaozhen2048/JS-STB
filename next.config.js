@@ -3,6 +3,16 @@ const fs = require('fs')
 const path = require('path')
 const BLOG = require('./blog.config')
 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ['www.notion.so', 'images.unsplash.com']
+  }
+}
+
+module.exports = nextConfig
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: BLOG.BUNDLE_ANALYZER
 })
